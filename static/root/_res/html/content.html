@@ -1,0 +1,30 @@
+<div class="left-section">
+    <div class="header">
+        <a href="#" onclick="location.href='/'" title="issp平台" class="logo">
+            <img src="/images/logo.png" alt="">
+        </a>
+        <span>issp平台</span>
+    </div>
+    <div class="nav" ui-view="nav" resize ng-style="style()">
+    </div>
+</div>
+<section class="right-section">
+    <div class="top-content">
+        <div class="top-fixed">
+            <div class="top">
+                <div class="top-back">
+                    <a href="https://user.issp.bjike.com/opportunity" class="back-btn"></a>
+                </div>
+                <div class="search">
+                    <a href="javascript:void(0)" class="search-btn" ng-click="searchToggle()" ng-show='isView'></a>
+                    <a href="javascript:void(0)" ng-click="login()" class="user-btn">{{username}}</a>
+                    <i class="close-line" ng-show="logined"></i>
+                    <a href="javascript:void(0)" ng-show="logined" ng-click="logout()" class="close-btn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="content" ui-view="content">
+            首页内容
+        </div>
+    </div>
+</section>

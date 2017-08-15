@@ -1,0 +1,39 @@
+<div class="content-input addApply" verify-scope="tipStyle: 1">
+    <div class="input-list">
+        <section>
+            <ul ng-repeat="list in detailTOS ">
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖品明细</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.prizeDetails">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖品购置途径</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.prizeBuyWays">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖品发放形式</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.prizeIssueForms">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>颁奖时间</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.awardTimes">
+                </li>
+                <span class="but1" ng-click="addtra($index)">增加</span>
+                <span class="{{$index==0?'but2':'but1'}}"  ng-click="cleartra($index)">移除</span>
+            </ul>
+        </section>
+    </div>
+    <p class="dataBottom">
+        <span class="imPrompt"><i><img src="/images/prompt.png"></i>带有<i><img src="/images/mandatory.png"></i>的为必填项</span>
+        <button ng-verify="{control:'myform'}" ng-click="prizeaddRewardFun()">提交</button>
+    </p>
+</div>
+
+<script type="text/javascript">
+
+    !function(){
+        laydate.skin('dahong');//切换皮肤，请查看skins下面皮肤库
+    }();
+
+
+</script>

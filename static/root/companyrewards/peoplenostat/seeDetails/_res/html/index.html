@@ -1,0 +1,34 @@
+<div class="content-tab list">
+    <ul class="table">
+        <li class="list-head">
+            <span></span>
+            <span>获奖名次</span>
+            <span>获奖人姓名</span>
+            <span>奖金额度</span>
+            <span>经验值额度</span>
+            <span>荣誉奖衍生奖品额度</span>
+        </li>
+        <li class="list-all" ng-repeat="lists in peopleseeLi" style="display: {{lists._delete?'none':'block'}};">
+            <section>
+                <div class="list-text {{lists._selectList?'selectList':''}}" ng-click="selectList(lists)">
+                    <p mod>{{$index+1+num}}</p>
+                    <p mod>{{::lists.awardRanking}}</p>
+                    <p mod>{{::lists.prizewinner}}</p>
+                    <p mod>{{::lists.bonusLimit}}</p>
+                    <p mod>{{::lists.empiricalValueLimit}}</p>
+                    <p mod>{{::lists.honorAwardLimit}}</p>
+                </div>
+            </section>
+        </li>
+    </ul>
+    <div class="module">
+        <div class="see-module">
+            <p class="see-type">体现类型</p>
+            <p class="see-description"></p>
+            <button class="btn" modclose>关闭</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <pagination count="custom.itemsCount" take="custom.take" activate="custom.activatePage"></pagination>
+    </footer>
+</div>

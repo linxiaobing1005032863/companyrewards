@@ -1,0 +1,66 @@
+<div class="content-input addReward" verify-scope="tipStyle: 1">
+    <div class="input-list">
+        <section>
+            <ul ng-repeat="list in rewardProgramRatiosTOS ">
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖励项目</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.rewardPrograms">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>当月侧重程度</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.focusingDegrees">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>当月预算范围</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.budgetRanges">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖金权重</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.bonusWeights">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖金额度</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.bonusLimits">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>荣誉衍生奖品权重</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.honorWeights">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>荣誉衍生奖品额度</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.honorLimits">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>经验值</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.empiricalValues">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>经验值额度</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.empiricalValueLimits">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>经验值换算成金额</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.empiricalValueToMoneys">
+                </li>
+                <span class="but1" ng-click="addtra($index)">增加</span>
+                <span class="{{$index==0?'but2':'but1'}}"  ng-click="cleartra($index)">移除</span>
+
+            </ul>
+        <!--    <input type="text" ng-model="bonusEdit.id" value="data.id" style="display:none">-->
+
+        </section>
+    </div>
+    <p class="dataBottom">
+        <span class="imPrompt"><i><img src="/images/prompt.png"></i>带有<i><img src="/images/mandatory.png"></i>的为必填项</span>
+        <button ng-verify="{control:'myform'}" ng-click="bonuseditRewardFun()">提交</button>
+    </p>
+</div>
+
+<script type="text/javascript">
+
+    !function(){
+        laydate.skin('dahong');//切换皮肤，请查看skins下面皮肤库
+    }();
+
+
+</script>

@@ -1,0 +1,58 @@
+<div class="content-tab list">
+    <ul class="table">
+        <li class="list-head">
+            <span></span>
+            <span>奖励项目</span>
+            <span>当月侧重程度</span>
+            <span>当月预算范围</span>
+            <span>奖金权重</span>
+            <span>奖金额度</span>
+            <span>荣誉衍生奖品权重</span>
+            <span>荣誉衍生奖品额度</span>
+            <span></span>
+        </li>
+        <li class="list-all" ng-repeat="lists in bonusseeLi" style="display: {{lists._delete?'none':'block'}};">
+            <section>
+                <div class="list-text {{lists._selectList?'selectList':''}}" ng-click="selectList(lists)">
+                    <p mod>{{$index+1+num}}</p>
+                    <p mod>{{::lists.rewardProgram}}</p>
+                    <p mod>{{::lists.focusingDegree}}</p>
+                    <p mod>{{::lists.budgetRange}}</p>
+                    <p mod>{{::lists.bonusWeight}}</p>
+                    <p mod>{{::lists.bonusLimit}}</p>
+                    <p mod>{{::lists.honorWeight}}</p>
+                    <p mod>{{::lists.honorLimit}}</p>
+                    <p>
+                        <a href="javascript:void(0)" class="more" ng-click="moreList(lists)">更多详细</a>
+                    </p>
+                </div>
+                <div class="can">
+                    <ul class="can-see" style="display: {{lists._moreList?'block':'none'}};">
+                        <li>
+                            <p class="see-parent">
+                                <span>经验值</span>
+                                <span>经验值额度</span>
+                                <span>经验值换算成金额</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.empiricalValue}}</span>
+                                <span mod>{{::lists.empiricalValueLimit}}</span>
+                                <span mod>{{::lists.empiricalValueToMoney}}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </li>
+    </ul>
+    <div class="module">
+        <div class="see-module">
+            <p class="see-type">体现类型</p>
+            <p class="see-description"></p>
+            <button class="btn" modclose>关闭</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <pagination count="custom.itemsCount" take="custom.take" activate="custom.activatePage"></pagination>
+    </footer>
+</div>

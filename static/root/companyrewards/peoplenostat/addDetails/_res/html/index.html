@@ -1,0 +1,43 @@
+<div class="content-input addDetails" verify-scope="tipStyle: 1">
+    <div class="input-list">
+        <section>
+            <ul ng-repeat="list in peopleTOS ">
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>获奖名次</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.awardRankings">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>获奖人姓名</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.prizewinners">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖金额度</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.bonusLimits">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>经验值额度</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.empiricalValueLimits">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>荣誉奖衍生奖品额度</em></label>
+                    <input type="text" ng-verify="{}" ng-model="list.honorAwardLimits">
+                </li>
+                <span class="but3" ng-click="addtra($index)">增加</span>
+                <span class="{{$index==0?'but4':'but3'}}"  ng-click="cleartra($index)">移除</span>
+            </ul>
+        </section>
+    </div>
+    <p class="dataBottom">
+        <span class="imPrompt"><i><img src="/images/prompt.png"></i>带有<i><img src="/images/mandatory.png"></i>的为必填项</span>
+        <button ng-verify="{control:'myform'}" ng-click="peopleaddRewardFun()">提交</button>
+    </p>
+</div>
+
+<script type="text/javascript">
+
+    !function(){
+        laydate.skin('dahong');//切换皮肤，请查看skins下面皮肤库
+    }();
+
+
+</script>

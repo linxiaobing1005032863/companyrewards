@@ -1,0 +1,89 @@
+<div class="content-input add" verify-scope="tipStyle: 1">
+    <div class="input-list">
+        <section>
+            <ul>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖励开放时间</em></label>
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="date-icon prizeOpeningTime" ng-model="indiEdit.prizeOpeningTime" ng-verify="{}">
+                </li>
+                <li >
+                    <label><em>奖励结束时间</em></label>
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="date-icon prizeEndTime" ng-model="indiEdit.prizeEndTime">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖励频率</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.prizeFrequency">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖励项目</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.prizeItem">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>参与对象</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.participator">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>指标名称</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.nameOfIndex">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>考核方式(计分方式)</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.evaluationMode">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>目标值</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.targetValue">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>指标来源</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.indexSource">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>设定排名总人数</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.totalNumber">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖励对象</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.prizeObject">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>颁奖时间</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.awardTime">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>奖励方式</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.rewardRule">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>预算额度</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.budgetLimit">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>:特殊处理</em></label>
+                    <input type="text" ng-verify="{}" ng-model="indiEdit.specialHandling">
+                </li>
+                <li>
+                    <label><em>总经办意见</em></label>
+                    <input type="text" ng-model="indiEdit.zjbOpinion">
+                </li>
+                <li>
+                    <label><em>备注</em></label>
+                    <input type="text"  ng-model="indiEdit.comment">
+                </li>
+            </ul>
+        </section>
+    </div>
+    <p class="dataBottom">
+        <span class="imPrompt"><i><img src="/images/prompt.png"></i>带有<i><img src="/images/mandatory.png"></i>的为必填项</span>
+        <button ng-verify="{control:'myform'}" ng-click="indiEditFun()">提交</button>
+    </p>
+</div>
+
+<script type="text/javascript">
+
+    !function(){
+        laydate.skin('dahong');//切换皮肤，请查看skins下面皮肤库
+    }();
+
+
+</script>

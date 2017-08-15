@@ -1,0 +1,25 @@
+<div class="content-input add">
+    <div class="input-list">
+        <section>
+            <ul>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>描述</em></label>
+                    <input type="text" ng-model="edit.description">
+                </li>
+                <li >
+                    <label><em>操作对象范围</em></label>
+                    <div class="select">
+                        <p class="select-text" >
+                            <span ng-repeat="str in positions">{{str.value||str.operator}}, </span>
+                        </p>
+                        <div class="mymultiselect"  ng-dropdown-multiselect="" options="workOptions" selected-model="positions" extra-settings="stringSettings"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <p class="dataBottom">
+        <span class="imPrompt"><i><img src="/images/prompt.png"></i>带有<i><img src="/images/mandatory.png"></i>的为必填项</span>
+        <button ng-click="editSetting()">提交</button>
+    </p>
+</div>

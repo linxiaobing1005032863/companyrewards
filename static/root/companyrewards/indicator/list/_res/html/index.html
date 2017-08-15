@@ -1,0 +1,94 @@
+<div class="content-tab list">
+    <ul class="table">
+        <li class="list-head">
+            <span></span>
+            <span>奖励开放时间</span>
+            <span>奖励结束时间</span>
+            <span>奖励频率</span>
+            <span>奖励项目</span>
+            <span>参与对象</span>
+            <span>指标名称</span>
+            <span>考核方式(计分方式)</span>
+            <span></span>
+        </li>
+        <li class="list-all" ng-repeat="lists in indiLi" style="display: {{lists._delete?'none':'block'}};">
+            <section>
+                <div class="list-text {{lists._selectList?'selectList':''}}" ng-click="selectList(lists)">
+                    <p mod>{{$index+1+num}}</p>
+                    <p mod>{{::lists.prizeOpeningTime}}</p>
+                    <p mod>{{::lists.prizeEndTime}}</p>
+                    <p mod>{{::lists.prizeFrequency}}</p>
+                    <p mod>{{::lists.prizeItem}}</p>
+                    <p mod>{{::lists.participator}}</p>
+                    <p mod>{{::lists.nameOfIndex}}</p>
+                    <p mod>{{::lists.evaluationMode}}</p>
+                    <p>
+                        <a href="javascript:void(0)" class="more" ng-click="moreList(lists)">更多详细</a>
+                    </p>
+                </div>
+                <div class="can">
+                    <ul class="can-see" style="display: {{lists._moreList?'block':'none'}};">
+                        <li>
+                            <p class="see-parent">
+                                <span>目标值</span>
+                                <span>指标来源</span>
+                                <span>设定排名总人数</span>
+                                <span>奖励对象</span>
+                                <span>颁奖时间</span>
+                                <span>奖励方式</span>
+                                <span>预算额度</span>
+                                <span>特殊处理</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.targetValue}}</span>
+                                <span mod>{{::lists.indexSource}}</span>
+                                <span mod>{{::lists.totalNumber}}</span>
+                                <span mod>{{::lists.prizeObject }}</span>
+                                <span mod>{{::lists.awardTime}}</span>
+                                <span mod>{{::lists.rewardRule }}</span>
+                                <span mod>{{::lists.budgetLimit}}</span>
+                                <span mod>{{::lists.specialHandling}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>总经办意见</span>
+                                <span>备注</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.zjbOpinion}}</span>
+                                <span mod>{{::lists.comment}}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </li>
+    </ul>
+    <div class="module">
+        <div class="see-module">
+            <p class="see-type">体现类型</p>
+            <p class="see-description"></p>
+            <button class="btn" modclose>关闭</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <pagination count="custom.itemsCount" take="custom.take" activate="custom.activatePage"></pagination>
+    </footer>
+</div>
+<div class="delete mod" ng-show="delShow">
+    <div class="del-head">
+        <h5>温馨提示</h5>
+    </div>
+    <div class="del-con">
+        <p>确定要删除这条数据？</p>
+        <div class="btn">
+            <button ng-click="delFn()">确定</button>
+            <button ng-click="cancel()">取消</button>
+        </div>
+    </div>
+</div>
+<div id="modalbg" ng-show="delShow"></div>
+
+
+
