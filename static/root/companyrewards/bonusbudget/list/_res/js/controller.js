@@ -25,6 +25,8 @@ app.controller('bonusListCtrl',function($scope,bonusSer,toastr,$stateParams,$sta
                             obj._selectList = true;
                         }
                     });
+
+
                     //向父Ctrl传递事件
                     $scope.$emit('changeId', $stateParams.id);
                 }
@@ -33,13 +35,35 @@ app.controller('bonusListCtrl',function($scope,bonusSer,toastr,$stateParams,$sta
             }
         });
     }
+
+    bonusSer.seeRewardbonus( $scope.bonusLi).then(function(response){
+        if(response.data.code==0){
+            $scope.reward= response.data.data;
+        }else {
+            toastr.error( response.data.msg, '温馨提示');
+        }
+    });
     $scope.selectList = function(event){
+        $scope.bonusEdit = event;
+        bonusSer.seeRewardbonus( $scope.bonusEdit).then(function(response){
+            if(response.data.code==0){
+                $scope.reward= response.data.data;
+                if($scope.reward !=' ' && $scope.reward !=undefined){
+                    $scope.idListd1 = event.id;
+                    $scope.$emit('changeId1', $scope.idListd1);
+                }
+            }else {
+                toastr.error( response.data.msg, '温馨提示');
+            }
+        });
         angular.forEach($scope.bonusLi,function(obj){
-                obj._selectList = false
+            obj._selectList = false
         });
         event._selectList = true;
         $scope.idListd = event.id;
+        $scope.$emit('changeId1', null);
         //向父Ctrl传递事件
+
         $scope.$emit('changeId', $scope.idListd);
         $scope.$emit('page', $location.search().page);
 

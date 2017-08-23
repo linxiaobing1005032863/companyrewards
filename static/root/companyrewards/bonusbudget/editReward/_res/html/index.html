@@ -1,52 +1,49 @@
-<div class="content-input addReward" verify-scope="tipStyle: 1">
+<div class="content-input editReward" verify-scope="tipStyle: 1">
     <div class="input-list">
         <section>
-            <ul ng-repeat="list in rewardProgramRatiosTOS ">
+            <ul ng-repeat="list in rewardProgramRatiosTOS">
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>奖励项目</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.rewardPrograms">
+                    <input type="text" ng-verify="{}" ng-model="list.rewardProgram">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>当月侧重程度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.focusingDegrees">
+                    <input type="text" ng-verify="{}" ng-model="list.focusingDegree">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>当月预算范围</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.budgetRanges">
+                    <select class="sele" ng-model="list.budgetRange">
+                        <option  ng-repeat="AllO in AllArea">{{AllO}}</option>
+                    </select>
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>奖金权重</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.bonusWeights">
+                    <input type="text" ng-verify="{}" ng-model="list.bonusWeight">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>奖金额度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.bonusLimits">
+                    <input type="text" ng-verify="{}" ng-model="list.bonusLimit">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>荣誉衍生奖品权重</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.honorWeights">
+                    <input type="text" ng-verify="{}" ng-model="list.honorWeight">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>荣誉衍生奖品额度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.honorLimits">
+                    <input type="number" ng-verify="{}" ng-model="list.honorLimit">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>经验值</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.empiricalValues">
+                    <input type="text" ng-verify="{}" ng-model="list.empiricalValue">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>经验值额度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.empiricalValueLimits">
+                    <input type="number" ng-verify="{}" ng-model="list.empiricalValueLimit">
                 </li>
-                <li class="required">
-                    <label><i><img src="/images/mandatory.png"></i><em>经验值换算成金额</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.empiricalValueToMoneys">
-                </li>
-                <span class="but1" ng-click="addtra($index)">增加</span>
-                <span class="{{$index==0?'but2':'but1'}}"  ng-click="cleartra($index)">移除</span>
+                <span class="but3" ng-click="addtra($index)">增加</span>
+                <span class="{{$index==0?'but4':'but3'}}"  ng-click="cleartra($index)">移除</span>
 
             </ul>
-        <!--    <input type="text" ng-model="bonusEdit.id" value="data.id" style="display:none">-->
 
         </section>
     </div>

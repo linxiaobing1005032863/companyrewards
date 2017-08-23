@@ -27,17 +27,6 @@ app.controller('peopleseeRewardCtrl',function($scope,peppleSer,toastr,$statePara
             }
         });
     }
-    $scope.selectList = function(event){
-        angular.forEach($scope.peopleseeLi,function(obj){
-                obj._selectList = false
-        });
-        event._selectList = true;
-        $scope.idListd = event.id;
-        //向父Ctrl传递事件
-        $scope.$emit('changeId', $scope.idListd);
-        $scope.$emit('page', $location.search().page);
-
-    };
     //点击更多详细
     $scope.moreList = function(event){
         angular.forEach($scope.peopleseeLi,function(obj){

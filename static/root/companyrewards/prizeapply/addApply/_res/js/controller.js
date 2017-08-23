@@ -25,16 +25,16 @@ app.controller('prizeaddApplyCtrl', function($scope, applySer,$state,$stateParam
     $scope.prizeaddRewardFun = function(){
         var data={
             id:$stateParams.id
+
         }
         for(var i = 0;i<$scope.detailTOS.length;i++){
             var o = $scope.detailTOS[i];
             data['detailTOS['+i + ']' + '.prizeDetails'] = o.prizeDetails;
             data['detailTOS['+i + ']' + '.prizeBuyWays'] = o.prizeBuyWays;
             data['detailTOS['+i + ']' + '.prizeIssueForms'] = o.prizeIssueForms;
-            data['detailTOS['+i + ']' + '.awardTimes'] = o.awardTimes
-
-
+            data['detailTOS['+i + ']' + '.awardTimes'] = angular.element('.awardTimes').val();
         }
+
         applySer.addApplyapply(data).then(function(response){
             if(response.data.code == 0){
                 $state.go('root.companyrewards.prizeapply.list[12]');

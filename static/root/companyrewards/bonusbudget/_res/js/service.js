@@ -10,7 +10,8 @@ app.factory('bonusSer',function ($http) {
         addRewardbonus:addRewardbonus,
         seeRewardbonus:seeRewardbonus,
         eaidRewardbonus:eaidRewardbonus,
-        countbonus:countbonus
+        countbonus:countbonus,
+        getAllArea:getAllArea
 
 
 
@@ -20,8 +21,10 @@ app.factory('bonusSer',function ($http) {
         return $http.get('/bonusbudget/guidePermission'+data);
     }
     //列表
-    function bonusList() {
-        return $http.get('/bonusbudget/list')
+    function bonusList(data) {
+        return $http.get('/bonusbudget/list',{
+            params: data
+        })
     }
     //更新奖励项目比例
     function eaidRewardbonus(data) {
@@ -62,6 +65,10 @@ app.factory('bonusSer',function ($http) {
         return $http.get('/bonusbudget/checkRewardProgramRatios',{
             params:data
         })
+    }
+    //当月预算范围
+    function getAllArea() {
+        return $http.get('/bonusbudget/findPay/reserve')
     }
 
 });

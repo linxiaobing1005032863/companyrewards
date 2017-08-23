@@ -8,6 +8,9 @@ app.controller('rewardsCtrl', function ($scope,$state) {
     $scope.$on('changeId',function(event,msg) {
         $scope.$broadcast('getId', msg)
     });
+    $scope.$on('changeId1',function(event,msg) {
+        $scope.$broadcast('getId1', msg)
+    });
     $scope.$on('page',function(event,msg){
         $scope.$broadcast('pageId',msg)
     });

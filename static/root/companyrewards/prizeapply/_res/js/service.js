@@ -18,8 +18,10 @@ app.factory('applySer',function ($http) {
         return $http.get('/prizeapply/guidePermission'+data);
     }
     //列表
-    function applyList() {
-        return $http.get('/prizeapply/list')
+    function applyList(data) {
+        return $http.get('/prizeapply/list',{
+            params: data
+        })
     }
     //id查询find
     function findapplyId(data){

@@ -11,6 +11,14 @@ app.controller('prizeeditApplyCtrl', function($scope, applySer,$state,$statePara
         }
 
     });
+    applySer.seeApplyapply(applyEdit).then(function(response){
+        if(response.data.code==0){
+            $scope.detailTOS = response.data.data;
+        }else {
+            toastr.error( response.data.msg, '温馨提示');
+        }
+
+    });
     $scope.detailTOS=[{}];
     $scope.addtra = function(){
         var obj={}
@@ -21,19 +29,18 @@ app.controller('prizeeditApplyCtrl', function($scope, applySer,$state,$statePara
         $scope.detailTOS.splice(index,1);
     }
     //编辑
-    $scope.prizeditRewardFun = function(){
+    $scope.prizeditFun = function(){
         var vm = $scope;
-
         var data ={
             id:$stateParams.id
         }
 
         for(var i = 0;i<$scope.detailTOS.length;i++){
             var o = $scope.detailTOS[i];
-            data['detailTOS['+i + ']' + '.awardRankings'] = o.awardRankings;
-            data['detailTOS['+i + ']' + '.prizewinners'] = o.prizewinners;
-            data['detailTOS['+i + ']' + '.bonusLimits'] = o.bonusLimits;
-            data['detailTOS['+i + ']' + '.empiricalValueLimits'] = o.empiricalValueLimits
+            data['detailTOS['+i + ']' + '.awardRankings'] = o.awardRanking;
+            data['detailTOS['+i + ']' + '.prizewinners'] = o.prizewinner;
+            data['detailTOS['+i + ']' + '.bonusLimits'] = o.bonusLimit;
+            data['detailTOS['+i + ']' + '.awardTimes'] = angular.element('.awardTimes').val();
 
         }
         applySer.editApplyapply(data).then(function(response){

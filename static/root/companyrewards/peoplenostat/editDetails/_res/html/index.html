@@ -4,26 +4,26 @@
             <ul ng-repeat="list in peopleTOS ">
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>获奖名次</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.awardRankings">
+                    <input type="text" ng-verify="{}" ng-model="list.awardRanking">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>获奖人姓名</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.prizewinners">
+                    <input type="text" ng-verify="{}" ng-model="list.prizewinner">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>奖金额度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.bonusLimits">
+                    <input type="number" ng-verify="{}" ng-model="list.bonusLimit">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>经验值额度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.empiricalValueLimits">
+                    <input type="number" ng-verify="{}" ng-model="list.empiricalValueLimit">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>荣誉奖衍生奖品额度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.honorAwardLimits">
+                    <input type="number" ng-verify="{}" ng-model="list.honorAwardLimit">
                 </li>
-                <span class="but1" ng-click="addtra($index)">增加</span>
-                <span class="{{$index==0?'but2':'but1'}}"  ng-click="cleartra($index)">移除</span>
+                <span class="but3" ng-click="addtra($index)">增加</span>
+                <span class="{{$index==0?'but4':'but3'}}"  ng-click="cleartra($index)">移除</span>
             </ul>
         </section>
     </div>

@@ -18,8 +18,10 @@ app.factory('peppleSer',function ($http) {
         return $http.get('/rewardpeoplenostat/guidePermission'+data);
     }
     //列表
-    function peopleList() {
-        return $http.get('/rewardpeoplenostat/list')
+    function peopleList(data) {
+        return $http.get('/rewardpeoplenostat/list',{
+            params: data
+        })
     }
     //id查询find
     function findpeopleId(data){

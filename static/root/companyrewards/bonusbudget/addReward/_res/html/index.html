@@ -12,7 +12,9 @@
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>当月预算范围</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.budgetRanges">
+                        <select class="sele" ng-model="list.budgetRanges">
+                            <option  ng-repeat="AllO in AllArea">{{AllO}}</option>
+                        </select>
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>奖金权重</em></label>
@@ -28,7 +30,7 @@
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>荣誉衍生奖品额度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.honorLimits">
+                    <input type="number" ng-verify="{}" ng-model="list.honorLimits">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>经验值</em></label>
@@ -36,14 +38,10 @@
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>经验值额度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.empiricalValueLimits">
+                    <input type="number" ng-verify="{}" ng-model="list.empiricalValueLimits">
                 </li>
-                <li class="required">
-                    <label><i><img src="/images/mandatory.png"></i><em>经验值换算成金额</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.empiricalValueToMoneys">
-                </li>
-                <span class="but1" ng-click="addtra($index)">增加</span>
-                <span class="{{$index==0?'but2':'but1'}}"  ng-click="cleartra($index)">移除</span>
+                <span class="but3" ng-click="addtra($index)">增加</span>
+                <span class="{{$index==0?'but4':'but3'}}"  ng-click="cleartra($index)">移除</span>
             </ul>
         </section>
     </div>

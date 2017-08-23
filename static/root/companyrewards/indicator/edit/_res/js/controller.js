@@ -14,6 +14,9 @@ app.controller('indiEditCtrl', function($scope, indiSer,$stateParams,$state,toas
     //编辑点击提交
     $scope.indiEditFun = function(){
         var vm = $scope;
+        vm.indiEdit.awardTime = angular.element('.awardTime').val();
+        vm.indiEdit.prizeEndTime = angular.element('.prizeEndTime').val();
+        vm.indiEdit.prizeOpeningTime = angular.element('.prizeOpeningTime').val();
         indiSer.editindi(vm.indiEdit).then(function(response){
             if(response.data.code == 0){
                 $state.go('root.companyrewards.indicator.list[12]');

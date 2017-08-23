@@ -41,6 +41,18 @@ module.exports = function(){
         };
         return request(options);
     };
+    //当月预算范围
+    this.findPay = function(argvs){
+        var options = {
+            method : 'GET',
+            timeout : 3000,
+            uri : config()['rurl'] + '/bonusbudget/v1/findPay/reserve',
+            headers:{
+                userToken:argvs.userToken
+            }
+        };
+        return request(options);
+    };
     //奖金预算列表
     this.bonusList = function(argvs){
         var options = {
@@ -108,7 +120,7 @@ module.exports = function(){
     };
     //查看奖励项目比例
     this.bonusseeReward = function(argvs){
-        console.log(argvs.id);
+        console.log(argvs);
         var options = {
             method : 'GET',
             timeout : 3000,
@@ -347,7 +359,7 @@ module.exports = function(){
         var options = {
             method : 'POST',
             timeout : 3000,
-            uri : config()['rurl'] + `/prizeapply/v1/updatePrizeDetails`,
+            uri : config()['rurl'] + `/prizeapply/v1/updatePrizeDetails${urlEncode(argvs,true)}`,
             form:argvs,
             headers:{
                 userToken:argvs.userToken

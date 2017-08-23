@@ -18,6 +18,7 @@ app.controller('peopleModuleCtrl',function ($scope,$state) {
     });
     if (window.location.href.split('id=')[1]) {//如果是刷新进来的页面，没有经过list
         $scope.idListd = window.location.href.split('id=')[1];
+        $scope.idListd1 = window.location.href.split('id=')[1];
         if($location.search().name){$scope.menuClass = $location.search().name + 'Menu'}
     }
     //功能权限
@@ -36,6 +37,9 @@ app.controller('peopleModuleCtrl',function ($scope,$state) {
     //监听到父Ctrl后改变事件
     $scope.$on("getId", function(event, msg){
         $scope.idListd = msg;
+    });
+    $scope.$on("getId1", function(event, msg){
+        $scope.idListd1 = msg;
     });
     $scope.$on('pageId',function(event,flag){
         $scope.page = flag;
@@ -69,8 +73,8 @@ app.controller('peopleModuleCtrl',function ($scope,$state) {
         }
     };
     $scope.editDetails = function(){
-        if($scope.idListd){
-            $state.go('root.companyrewards.peoplenostat.editDetails[12]',{id:$scope.idListd,page:$scope.page});
+        if($scope.idListd1){
+            $state.go('root.companyrewards.peoplenostat.editDetails[12]',{id:$scope.idListd1,page:$scope.page});
             $scope.menuClass = 'editDetailsMenu'
         }
     };

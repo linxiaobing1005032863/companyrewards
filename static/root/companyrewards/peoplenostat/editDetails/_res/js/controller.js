@@ -11,6 +11,14 @@ app.controller('peopleeditRewardCtrl', function($scope, peppleSer,$state,$stateP
         }
 
     });
+    peppleSer.seeDetailpeople(peopleEdit).then(function(response){
+        if(response.data.code==0){
+            $scope.peopleTOS = response.data.data;
+        }else {
+            toastr.error( response.data.msg, '温馨提示');
+        }
+
+    });
     $scope.peopleTOS=[{}];
     $scope.addtra = function(){
         var obj={}
@@ -23,18 +31,17 @@ app.controller('peopleeditRewardCtrl', function($scope, peppleSer,$state,$stateP
     //编辑
     $scope.peopleEditFun = function(){
         var vm = $scope;
-
         var data ={
             id:$stateParams.id
         }
 
         for(var i = 0;i<$scope.peopleTOS.length;i++){
             var o = $scope.peopleTOS[i];
-            data['peopleTOS['+i + ']' + '.awardRankings'] = o.awardRankings;
-            data['peopleTOS['+i + ']' + '.prizewinners'] = o.prizewinners;
-            data['peopleTOS['+i + ']' + '.bonusLimits'] = o.bonusLimits;
-            data['peopleTOS['+i + ']' + '.empiricalValueLimits'] = o.empiricalValueLimits;
-            data['peopleTOS['+i + ']' + '.honorAwardLimits'] = o.honorAwardLimits;
+            data['peopleTOS['+i + ']' + '.awardRankings'] = o.awardRanking;
+            data['peopleTOS['+i + ']' + '.prizewinners'] = o.prizewinner;
+            data['peopleTOS['+i + ']' + '.bonusLimits'] = o.bonusLimit;
+            data['peopleTOS['+i + ']' + '.empiricalValueLimits'] = o.empiricalValueLimit;
+            data['peopleTOS['+i + ']' + '.honorAwardLimits'] = o.honorAwardLimit;
 
         }
         peppleSer.editDetailpeople(data).then(function(response){

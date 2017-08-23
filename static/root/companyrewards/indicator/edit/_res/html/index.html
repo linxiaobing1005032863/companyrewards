@@ -6,10 +6,6 @@
                     <label><i><img src="/images/mandatory.png"></i><em>奖励开放时间</em></label>
                     <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="date-icon prizeOpeningTime" ng-model="indiEdit.prizeOpeningTime" ng-verify="{}">
                 </li>
-                <li >
-                    <label><em>奖励结束时间</em></label>
-                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="date-icon prizeEndTime" ng-model="indiEdit.prizeEndTime">
-                </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>奖励频率</em></label>
                     <input type="text" ng-verify="{}" ng-model="indiEdit.prizeFrequency">
@@ -48,7 +44,7 @@
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>颁奖时间</em></label>
-                    <input type="text" ng-verify="{}" ng-model="indiEdit.awardTime">
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="date-icon awardTime" ng-model="indiEdit.awardTime">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>奖励方式</em></label>
@@ -56,11 +52,15 @@
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>预算额度</em></label>
-                    <input type="text" ng-verify="{}" ng-model="indiEdit.budgetLimit">
+                    <input type="number" ng-verify="{}" ng-model="indiEdit.budgetLimit">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>:特殊处理</em></label>
                     <input type="text" ng-verify="{}" ng-model="indiEdit.specialHandling">
+                </li>
+                <li >
+                    <label><em>奖励结束时间</em></label>
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="date-icon prizeEndTime" ng-model="indiEdit.prizeEndTime">
                 </li>
                 <li>
                     <label><em>总经办意见</em></label>

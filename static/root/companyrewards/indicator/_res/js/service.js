@@ -15,8 +15,10 @@ app.factory('indiSer',function ($http) {
         return $http.get('/rewardindicator/guidePermission'+data);
     }
     //列表
-    function indiList() {
-        return $http.get('/rewardindicator/list')
+    function indiList(data) {
+        return $http.get('/rewardindicator/list',{
+            params: data
+        })
     }
     //id查询find
     function findindiId(data){

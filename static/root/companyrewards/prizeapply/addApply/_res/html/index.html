@@ -16,7 +16,7 @@
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>颁奖时间</em></label>
-                    <input type="text" ng-verify="{}" ng-model="list.awardTimes">
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="date-icon awardTimes" ng-model="list.awardTimes">
                 </li>
                 <span class="but1" ng-click="addtra($index)">增加</span>
                 <span class="{{$index==0?'but2':'but1'}}"  ng-click="cleartra($index)">移除</span>

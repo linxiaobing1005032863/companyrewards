@@ -12,6 +12,14 @@ app.controller('bonusaddRewardCtrl', function($scope, bonusSer,$state,$statePara
         }
 
     });
+    //当月预算范围
+    bonusSer.getAllArea().then(function(response){
+        if(response.data.code==0){
+            $scope.AllArea = response.data.data;
+        }else{
+            toastr.error(response.data.msg,'温馨提示');
+        }
+    });
     $scope.rewardProgramRatiosTOS=[{}];
     $scope.addtra = function(){
         var obj={}
@@ -46,7 +54,7 @@ app.controller('bonusaddRewardCtrl', function($scope, bonusSer,$state,$statePara
                 $state.go('root.companyrewards.bonusbudget.list[12]');
                 toastr.success("已成功添加", '温馨提示');
             }else{
-                toastr.error( response.data.msg, '温馨提示');console.log(response)
+                toastr.error( response.data.msg, '温馨提示');
             }
         });
 

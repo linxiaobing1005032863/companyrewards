@@ -37,6 +37,9 @@ app.controller('applyModuleCtrl',function ($scope,$state) {
     $scope.$on("getId", function(event, msg){
         $scope.idListd = msg;
     });
+    $scope.$on("getId1", function(event, msg){
+        $scope.idListd1 = msg;
+    });
     $scope.$on('pageId',function(event,flag){
         $scope.page = flag;
     });
@@ -70,8 +73,8 @@ app.controller('applyModuleCtrl',function ($scope,$state) {
         }
     };
     $scope.editApply = function(){
-        if($scope.idListd){
-            $state.go('root.companyrewards.prizeapply.editApply[12]',{id:$scope.idListd,page:$scope.page});
+        if($scope.idListd1){
+            $state.go('root.companyrewards.prizeapply.editApply[12]',{id:$scope.idListd1,page:$scope.page});
             $scope.menuClass = 'editApplyMenu'
         }
     };

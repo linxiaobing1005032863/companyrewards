@@ -4,7 +4,20 @@
             <ul>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>月份</em></label>
-                    <input type="text" ng-verify="{}" ng-model="peopleEdit.month">
+                    <select class="sele" ng-model="peopleEdit.month">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>奖励项目</em></label>
@@ -12,11 +25,11 @@
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>排名人数</em></label>
-                    <input type="text" ng-verify="{}" ng-model="peopleEdit.rankingPeopleNo">
+                    <input type="number" ng-verify="{}" ng-model="peopleEdit.rankingPeopleNo">
                 </li>
                 <li class="required">
                     <label><i><img src="/images/mandatory.png"></i><em>获奖人数</em></label>
-                    <input type="text" ng-verify="{}" ng-model="peopleEdit.awardPersonNo">
+                    <input type="number" ng-verify="{}" ng-model="peopleEdit.awardPersonNo">
                 </li>
             </ul>
         </section>
